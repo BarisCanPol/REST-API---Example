@@ -14,8 +14,6 @@ namespace Commander.Controllers
     [ApiController]
     public class CommandsController : ControllerBase
     {
-        //readonly = sadece constructor da set edilebilir 
-        //Dependecy injected start
         private readonly ICommanderRepo _repository;
         private readonly IMapper _mapper;
 
@@ -24,7 +22,6 @@ namespace Commander.Controllers
             _repository = repository;
             _mapper = mapper;
         }
-        //dependency injected end
 
         //no more necessariy
         //private readonly MockCommanderRepo _repository = new MockCommanderRepo();
@@ -75,7 +72,6 @@ namespace Commander.Controllers
             if(record ==null)
                 return NotFound();
 
-            //Farklı yazıldı
             _mapper.Map(command,record);
 
             _repository.UpdateCommand(record);

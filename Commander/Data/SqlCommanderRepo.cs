@@ -9,7 +9,7 @@ namespace Commander.Data
     {
         private readonly CommanderContext _context;
 
-        //Dependecyn injection
+        //Dependency injection
         public SqlCommanderRepo(CommanderContext context)
         {
             _context = context;
